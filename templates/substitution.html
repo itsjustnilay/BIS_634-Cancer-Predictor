@@ -1,0 +1,74 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Substitution Matrices</title>
+    <style>
+        body {
+            background-image: url('https://undark.org/wp-content/uploads/2022/02/GettyImages-1316978025_edit.jpg'); 
+            background-size: cover; 
+            background-position: center; 
+            margin: 0; 
+            font-family: 'Times New Roman', serif; 
+            color: black; 
+        }
+
+        h1 {
+            text-align: center;
+            background-color: rgba(53, 208, 235, 0.87); 
+            padding: 10px; 
+            border-radius: 10px;
+            color: rgba(0, 0, 0, 0.774); 
+        }
+
+        h2 {
+            text-align: center;
+            background-color: rgba(100, 143, 237, 0.699); 
+            padding: 10px; 
+            border-radius: 10px;
+            color: whitesmoke; 
+        }
+
+        #allele_matrix {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white; 
+            border-radius: 10px; 
+            box-shadow: 0 0 10px whitesmoke; 
+        }
+        #amino_acid_matrix {
+            max-width: 10000px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white; 
+            border-radius: 10px; 
+            box-shadow: 0 0 10px whitesmoke;
+        }
+        form {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: rgb(165, 226, 168); 
+            border-radius: 10px; 
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Substitution Matrices</h1>
+
+    <div id="allele_matrix">
+        <h2>Substitution Matrix (Allele)</h2>
+        {{ plot1|safe }}
+    </div>
+
+    <div id="amino_acid_matrix">
+        <h2>Substitution Matrix (Amino Acid)</h2>
+        {{ plot2|safe }}
+    </div>
+
+    <form><center><a href="/">Back to Homepage</a></center></form>    
+</body>
+</html>

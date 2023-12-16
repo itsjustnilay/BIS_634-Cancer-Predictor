@@ -1,0 +1,50 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organ Information</title>
+    <style>
+        body {
+            background-image: url('https://www.nuffieldbioethics.org/assets/images/_1200x630_crop_center-center_none/Cover-illustration-DNAI-Genomics-interim-report-e1693406501598-1104x6202.png'); 
+            background-size: cover;  
+            background-position: center; 
+            margin: 0;  
+            font-family: 'Times New Roman', serif;
+            color: black; 
+        }
+    
+        h1 {
+            text-align: center;
+            text-align: center;
+            background-color: cornflowerblue; 
+            padding: 10px; 
+            border-radius: 10px;
+            color: whitesmoke; 
+        }
+    
+        form {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color:lightcyan; 
+            border-radius: 10px;
+            box-shadow: whitesmoke; 
+        }
+    </style> 
+</head>
+<body>
+    <h1>{{ organ }} Information</h1>
+    <form>
+    <p>Cancer Type Counts:</p>
+    <ul>
+        {% for cancer_type, count in cancer_type_counts.items() %}
+            <li>{{ cancer_type }}: {{ count }}</li>
+        {% endfor %}
+    </ul>
+    </form>
+    <form>
+        <p><a href="/index">Back to Organ Selector</a></p>
+        <p><a href="/">Back to Homepage</a></p></form>
+</body>
+</html>

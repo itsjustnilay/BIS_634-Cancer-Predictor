@@ -1,0 +1,112 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <style>
+        body {
+            background-image: url('https://www.genengnews.com/wp-content/uploads/2021/03/Shaffer_GettyImages-1214010083-scaled-e1614370036216.jpg'); 
+            background-size: cover; 
+            background-position: center; 
+            margin: 0; 
+            font-family: 'Times New Roman', serif; 
+            color: black; 
+        }
+
+        h1 {
+            text-align: center;
+            background-color: rgba(235, 232, 53, 0.87); 
+            padding: 10px; 
+            border-radius: 10px;
+            color: rgba(0, 0, 0, 0.774); 
+        }
+
+        form {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white; 
+            border-radius: 10px;
+            box-shadow: 0 0 10px whitesmoke; 
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .image-container img {
+            width: 95%;
+            border-radius: 5px;
+        }
+
+        .image-container figcaption {
+            text-align: center;
+            margin-top: 5px;
+            color: #555;
+        }
+
+        a.button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: darkcyan; 
+            color: #fff; 
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        a.button:hover {
+            background-color: darkblue; 
+        }
+    </style>
+</head>
+<body>
+    <br>
+    <br>
+    <h1><b>Welcome to the Cancer Type Predictor!</b></h1>
+    <form style="width: 800px;">
+        <div class="image-container">
+            <figure>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Protein_CDKN2A_PDB_1a5e.png" alt="cdkn2a">
+                <figcaption>Protein CDKN2A PDB</figcaption>
+            </figure>
+            <figure>
+                <img src="https://media.springernature.com/m685/springer-static/image/art%3A10.1038%2Fonc.2017.316/MediaObjects/41388_2018_Article_BFonc2017316_Fig8_HTML.jpg" alt="Image 2">
+                <figcaption>CDKN2A-cancer association</figcaption>
+            </figure>
+        </div>
+        <p>Cancer is a multifaceted array of disorders arising from genetic or epigenetic factors, driven by processes such as irregular gene expression, metabolic disturbances, and genetic and epigenetic aberrations. Dysfunctions at the cellular level, improper cell cycle progression, and disruptions in signal transduction contribute to cancer progression. Regulatory proteins, including cyclins, cyclin-dependent kinases (CDKs), and CDK inhibitor proteins, act as tumor suppressors by controlling various checkpoints in the cell cycle. Tumor suppressor genes, exemplified by p16INK4a encoded by CDKN2A on chromosome 9, play a pivotal role in restraining tumor growth. Compromised in tumors, these genes eliminate inhibitors of cell growth, fostering uncontrolled cell growth and tumorigenesis. Tumor cells share characteristics such as limitless proliferation, autonomous growth signaling, and resistance to anti-proliferative and apoptotic signals.</p>
+        <p>The p16INK4a protein, a silenced tumor suppressor in various cancers, is encoded by CDKN2A, a gene susceptible to harmful mutations on chromosome 9. Beyond melanomas, mutations in CDKN2A are implicated in pancreatic adenocarcinoma, gastric lymphoma, head and neck squamous cell carcinoma, prostate cancer, gastric, and colorectal cancer. The CDKN2A gene, spanning 8.5 kb, produces two tumor-suppressor proteins, p16INK4a and p14ARF, collaborating with other proteins to regulate the cell cycle. P16INK4a, with 156 amino acids and a molecular weight of 16 kDa, negatively regulates the cell cycle, halting improper cell division in response to stress conditions such as DNA damage or oncogenic signals, potentially inducing cell senescence.</p>
+        <p>This project takes a look at mutation data about single missense substitution mutations for CDKN2A gene and aims to predict cancer type based on substituitons and site of substitution involved.</p>
+    </form>
+    <form>
+        <p> Click here to find out the number of cancers and their types in the database by organs:
+        <a href="/index">Go to Organ Selection!</a></p>
+        <br>
+        <p> Click here to try out our cancer predictor:
+        <a href="/predictor">Go to Cancer Type Predictor!</a></p>
+        <br>
+        <p> Click here to check out the substitution matrices by alleles and by amino acids:
+        <a href="/substitution">Check out the substitution matrices!</a></p>
+    </form>
+    <form>
+        <p>Access complete files and code on my Github! <a href="https://github.com/itsjustnilay/BIS_634_Final_Project_Nilay_Bhatt">Click here!</a></center></p>
+    </form>
+</body>
+</html>

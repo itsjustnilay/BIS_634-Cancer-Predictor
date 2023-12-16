@@ -1,0 +1,53 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+    <style>
+        body {
+            background-image: url('https://cdn2.opendemocracy.net/media/original_images/1024px-Haemophilus_influenzae_01.jpg'); 
+            background-size: cover;  
+            background-position: center; 
+            margin: 0;  
+            font-family: 'Times New Roman', serif;
+            color: black; 
+        }
+    
+        h1 {
+            text-align: center;
+            text-align: center;
+            background-color: rgb(224, 147, 117); 
+            padding: 10px; 
+            border-radius: 10px;
+            color: whitesmoke; 
+        }
+    
+        form {
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color:rgba(255, 240, 224, 0.877); 
+            border-radius: 10px;
+            box-shadow: whitesmoke; 
+        }
+    </style> 
+</head>
+<body>
+    <h1>Cancer Type Prediction Result</h1>
+    <form>
+    <p>Base Allele: {{ base_allele }}</p>
+    <p>Mutant Allele: {{ mutant_allele }}</p>
+    <p>Primary Site: {{ primary_site }}</p>
+    
+    <h2>Predicted Cancer Types and Probabilities:</h2>
+    <ul>
+        {% for cancer_type, probability in cancer_type_probabilities.items() %}
+            <li>{{ cancer_type }}: {{ (probability)|round(2) }}%</li>
+        {% endfor %}
+    </ul></form>
+    <form>
+        <p><center><a href="/predictor">Back to Cancer Predictor</a></center></p>
+        <p><center><a href="/">Back to Homepage</a></center></p></form>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organ Selection</title>
+    <style>
+        body {
+            background-image: url('https://www.radboudumc.nl/getmedia/bf5d2474-2d39-451e-93e7-5a531aa46aaf/genome-sequencing.aspx?width=612&height=344&ext=.jpg&type=BlockColumn1Zoom1'); 
+            background-size: cover; 
+            background-position: center; 
+            margin: 0; 
+            font-family: 'Times New Roman', serif; 
+            color: black; 
+        }
+
+        h2 {
+            text-align: center;
+            background-color: rgba(100, 237, 100, 0.699); 
+            padding: 10px; 
+            border-radius: 10px;
+            color: whitesmoke; 
+        }
+
+        form {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: rgb(165, 226, 168); 
+            border-radius: 10px; 
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: darkcyan; 
+            color: #fff; 
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: darkblue; 
+        }
+    </style>
+</head>
+<body>
+    <br>
+    <br>
+    <h2>FIND ORGAN-WISE METRICS</h2>
+    <form action="/info" method="get">
+        <center><label for="organ"><b>Choose an Organ:</b></label></center>
+        <center><select name="organ" id="organ">
+            <option value="" selected>Select an Organ</option>
+            {% for site in primary_sites %}
+                <option value="{{ site }}">{{ site }}</option>
+            {% endfor %}
+        </select></center>
+        <br>
+        <br>
+        <input type="submit" value="Get Organ Info">
+    </form>
+    <form><center><a href="/">Back to Homepage</a></center></form>
+</body>
+</html>

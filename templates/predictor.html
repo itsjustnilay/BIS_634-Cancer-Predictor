@@ -1,0 +1,94 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predictor</title>
+    <style>
+        body {
+            background-image: url('https://media.wired.com/photos/606fbf39b5c90ecdb84fc7f2/master/pass/Science-variants-1243363094.jpg'); 
+            background-size: cover; 
+            background-position: center; 
+            margin: 0; 
+            font-family: 'Times New Roman', serif; 
+            color: black; 
+            position: relative;
+        }
+
+        h2 {
+            text-align: center;
+            background-color: rgba(100, 210, 237, 0.822); 
+            padding: 10px; 
+            border-radius: 10px;
+            color: whitesmoke; 
+        }
+
+        form {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: rgba(165, 217, 226, 0.7); 
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
+            color: whitesmoke; 
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: darkcyan; 
+            color: #fff; 
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: darkblue; 
+        }
+    </style>
+</head>
+<body>
+    <h2>Cancer Type Predictor</h2>
+    <form method="post" action="/predictor">
+        <label for="base_allele">Base Allele:</label>
+        <select name="base_allele" id="base_allele">
+            <option value="" disabled selected>Choose one option</option>
+            {% for allele in base_alleles %}
+                <option value="{{ allele }}">{{ allele }}</option>
+            {% endfor %}
+        </select><br><br>
+
+        <label for="mutant_allele">Mutant Allele:</label>
+        <select name="mutant_allele" id="mutant_allele">
+            <option value="" disabled selected>Choose one option</option>
+            {% for allele in mutant_alleles %}
+                <option value="{{ allele }}">{{ allele }}</option>
+            {% endfor %}
+        </select><br><br>
+
+        <label for="primary_site">Primary Site:</label>
+        <select name="primary_site" id="primary_site">
+            <option value="" disabled selected>Choose one option</option>
+            {% for site in primary_sites %}
+                <option value="{{ site }}">{{ site }}</option>
+            {% endfor %}
+        </select><br><br>
+
+        <input type="submit" value="Predict">
+    </form>
+    <form><center><a href="/">Back to Homepage</a></center></form>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cancer Types by Tumour Origin</title>
+    <style>
+        body {
+            background-image: url('https://www.nuffieldbioethics.org/assets/images/_1200x630_crop_center-center_none/Cover-illustration-DNAI-Genomics-interim-report-e1693406501598-1104x6202.png'); 
+            background-size: cover;  
+            background-position: center; 
+            margin: 0;  
+            font-family: 'Times New Roman', serif;
+            color: black; 
+        }
+    
+        h1 {
+            text-align: center;
+            text-align: center;
+            background-color: cornflowerblue; 
+            padding: 10px; 
+            border-radius: 10px;
+            color: whitesmoke; 
+        }
+    
+        form {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color:lightcyan; 
+            border-radius: 10px;
+            box-shadow: whitesmoke; 
+        }
+    </style> 
+</head>
+<body>
+    <h1>Histopathology</h1>
+
+    {% for plot_html in plot_htmls %}
+        {{ plot_html|safe }}
+    {% endfor %}
+
+    <form>
+        <p><center><a href="/">Back to Homepage</a></center></p></form>
+</body>
+</html>

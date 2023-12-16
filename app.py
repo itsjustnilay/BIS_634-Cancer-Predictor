@@ -46,7 +46,6 @@ def substitution_matrix():
                      x=allele_matrix.columns, y=allele_matrix.index,
                      title='Substitution Matrix (Allele)', color_continuous_scale='YlGnBu')
 
-    # Add annotations
     fig1.update_layout(annotations=[
         dict(x=i, y=j, text=str(allele_matrix.iloc[j, i]),
              showarrow=False, font=dict(color='black'))
@@ -67,7 +66,6 @@ def substitution_matrix():
                      x=substitution_matrix.columns, y=substitution_matrix.index,
                      title='Substitution Matrix (Amino Acid)', color_continuous_scale='YlGnBu')
 
-    # Add annotations
     fig2.update_layout(annotations=[
         dict(x=i, y=j, text=str(substitution_matrix.iloc[j, i]),
              showarrow=False, font=dict(color='black'))
@@ -91,7 +89,6 @@ def predictor():
         primary_site = request.form.get("primary_site")
 
         if base_allele is not None and mutant_allele is not None and primary_site is not None:
-            # Filter data based on user selection
             prediction_data = filtered_df[
                 (filtered_df['BASE_ALLELE'] == base_allele) &
                 (filtered_df['MUTANT_ALLELE'] == mutant_allele) &

@@ -109,5 +109,34 @@ def predictor():
 
     return render_template("predictor.html", base_alleles=base_alleles, mutant_alleles=mutant_alleles, primary_sites=primary_sites)
 
+
+@app.route("/histo")
+def histo():
+    tumour_types = filtered_df['TUMOUR_ORIGIN'].unique()
+
+    figs = []
+    for tumour_type in tumour_types:
+        tumour_data = filtered_df[filtered_df['TUMOUR_ORIGIN'] == tumour_type]
+
+        fig = px.bar(tumour_data, x='CANCER_TYPE', title=f'Cancer Types for {tumour_type}',
+                     labels={'CANCER_TYPE': 'Cancer Type', 'count': 'Count'},
+                     color='CANCER_TYPE')
+
+        unique_cancer_types = tumour_data['CANCER_TYPE'].unique()
+        for cancer_type in unique_cancer_types:
+            count = tumour_data[tumour_data['CANCER_TYPE'] == cancer_type].shape[0]
+            fig.add_annotation(
+                x=cancer_type,
+                y=count + 1,  
+                text=str(count),
+                showarrow=False,
+                font=dict(size=10),
+            )
+
+        figs.append(fig)
+    plot_htmls = [fig.to_html(full_html=False) for fig in figs]
+
+    return render_template("histo.html", plot_htmls=plot_htmls)
+
 if __name__ == "__main__":
     app.run(debug=True)
